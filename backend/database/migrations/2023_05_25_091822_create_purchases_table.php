@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('invoice_no');
             $table->text('note');
             $table->float('total_price',8,2);
-            $table->date('created_at');
+            $table->date('date');
             $table->timestamps();
         });
     }
