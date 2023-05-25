@@ -57,15 +57,4 @@ class User extends Authenticatable
         $this->attributes['password'] = Hash::make($value);
     }
 
-    public function role() {
-        return $this->belongsTo(Role::class);
-    }
-
-    public function permissions() {
-        return $this->role->permissions->pluck('name');
-    }
-
-    public function hasAccess($access) {
-        return $this->permissions()->contains($access);
-    }
 }

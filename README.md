@@ -14,3 +14,4 @@ Follow the steps mentioned below to install and run the project.
 4. Update the database name and credentials in `.env` file
 5. Run the command `php artisan migrate:fresh --seed`
 6. Run the command `php artisan serve` to check api functionality
+7. If you get such kind of things 'Personal access client not found or Please create one' then run `php artisan passport:install`
