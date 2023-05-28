@@ -4,15 +4,28 @@ namespace App\Http\Controllers\Core\Product;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\JsonResponseTrait;
+use Repository\Product\ProductRepository;
+use App\Http\Resources\Product\ProductResource;
+use App\Http\Requests\Product\ProductPostRequest;
 
 class ProductManagementController extends Controller
 {
+    use JsonResponseTrait;
+
+    protected $productRepository;
+
+    function __construct(ProductRepository $productRepository)
+    {
+        $this->productRepository   =  $productRepository;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+      $products =$this->productRepository->getAll();
+      return $this->json('List of Products', ProductResource::collection($products));
     }
 
     /**
@@ -26,9 +39,13 @@ class ProductManagementController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProductPostRequest $request)
     {
-        //
+      $product = $this->productRepository->create($request->validated());
+
+      return $this->json('Product create successfully',[
+          'product'          => $product,
+      ]);
     }
 
     /**
