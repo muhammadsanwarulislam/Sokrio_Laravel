@@ -26,8 +26,7 @@ class ProductPostRequest extends FormRequest
             'stock'         => 'required|string',
             'price'         => 'required',
             'unit'          => 'required',
-            'product_code'  => 'required',
-            'user_id'       => 'required'
+            'product_code'  => 'required'
         ];
     }
 
@@ -43,8 +42,7 @@ class ProductPostRequest extends FormRequest
           'stock.required'          => 'The stock filed is required.',
           'price.required'          => 'The price filed is required',
           'unit.required'           => 'The unit filed is required',
-          'product_code.required'   => 'The product_code filed is required',
-          'user_id.required'        => 'The user_id filed is required',
+          'product_code.required'   => 'The product_code filed is required'
       ];
     }
 }

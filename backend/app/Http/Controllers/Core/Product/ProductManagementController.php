@@ -8,6 +8,7 @@ use App\Http\Controllers\JsonResponseTrait;
 use Repository\Product\ProductRepository;
 use App\Http\Resources\Product\ProductResource;
 use App\Http\Requests\Product\ProductPostRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ProductManagementController extends Controller
 {
@@ -41,7 +42,7 @@ class ProductManagementController extends Controller
      */
     public function store(ProductPostRequest $request)
     {
-      $product = $this->productRepository->create($request->validated());
+      $product = $this->productRepository->create($request->validated() + ['user_id' => Auth::id()]);
 
       return $this->json('Product create successfully',[
           'product'          => $product,
@@ -53,7 +54,8 @@ class ProductManagementController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $product = $this->productRepository->findByID($id);
+        return $this->json("The product $id is",new ProductResource($product));
     }
 
     /**
@@ -67,9 +69,13 @@ class ProductManagementController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ProductPostRequest $request, string $id)
     {
-        //
+        $product = $this->productRepository->updateByID($id, $request->validated());
+
+        return $this->json('Products update successfully',[
+            'product'          => $product, 
+        ]);
     }
 
     /**
@@ -77,6 +83,7 @@ class ProductManagementController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->productRepository->deletedByID($id);
+        return $this->json('Product delete successfully');
     }
 }
