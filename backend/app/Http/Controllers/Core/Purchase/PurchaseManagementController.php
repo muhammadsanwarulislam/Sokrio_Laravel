@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Core\Purchase;
 
 use Illuminate\Http\Request;
+use Repository\User\UserRepository;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Repository\Product\ProductRepository;
 use App\Http\Controllers\JsonResponseTrait;
 use Repository\Purchase\PurchaseRepository;
 use App\Http\Resources\Product\ProductResource;
 use App\Http\Resources\Purchase\PurchaseResource;
+use App\Http\Resources\Product\CurrentUserProductResource;
 
 class PurchaseManagementController extends Controller
 {
@@ -16,11 +19,13 @@ class PurchaseManagementController extends Controller
 
     protected $purchaseRepository;
     protected $productRepository;
+    protected $userRepository;
 
-    function __construct(PurchaseRepository $purchaseRepository, ProductRepository $productRepository)
+    function __construct(PurchaseRepository $purchaseRepository, ProductRepository $productRepository, UserRepository $userRepository)
     {
         $this->purchaseRepository   =  $purchaseRepository;
         $this->productRepository    =   $productRepository;
+        $this->userRepository       =   $userRepository;
     }
     /**
      * Display a listing of the resource.
@@ -31,10 +36,10 @@ class PurchaseManagementController extends Controller
         return $this->json('List of Purchase Products', PurchaseResource::collection($purchase));
     }
 
-    public function getAllProducts()
+    public function currentUserAllProducts()
     {
-        $products =$this->productRepository->getAll();
-        return $this->json('List of Products',ProductResource::collection($products));
+        $products =$this->userRepository->getCurrentUserAllProducts(Auth::user()->id);
+        return $this->json('List of all Products',new CurrentUserProductResource($products));
     }
     /**
      * Show the form for creating a new resource.

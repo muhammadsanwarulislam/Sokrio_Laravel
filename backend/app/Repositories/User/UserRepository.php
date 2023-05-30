@@ -13,9 +13,9 @@ class UserRepository extends BaseRepository
         return User::class;
     }
 
-    public function getAllUsersWithRole()
+    public function getCurrentUserAllProducts($id)
     {
-        return $this->model()::with('role')->paginate(10);
+        return $this->model()::with('products')->find($id);
     }
 
     public function findByIDWithRole($id)

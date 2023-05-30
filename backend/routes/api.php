@@ -21,5 +21,5 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     Route::apiResource('products', ProductManagementController::class);
     Route::apiResource('purchases', PurchaseManagementController::class);
-    Route::get('/ListOfProducts',[PurchaseManagementController::class, 'getAllProducts']);
+    Route::get('/current_user_all_products',[PurchaseManagementController::class, 'currentUserAllProducts']);
 });

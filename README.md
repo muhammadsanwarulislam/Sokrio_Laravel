@@ -1,9 +1,9 @@
 # Backend APP Or Admin Dashboard(React js) installations
 Follow the steps mentioned below to install and run the project.
-
+For both **dashboard** **admin**
 1. Clone or download the repository
 2. Run the command `npm install`
-3. Run `npm run start` from the project root and visit `http://localhost:3000/`
+3. Run `npm run start` from the project root and visit `http://localhost:3000/` and `http://localhost:3030/`
 
 # Backend API(Laravel) installations
 Follow the steps mentioned below to install and run the project.
@@ -13,5 +13,5 @@ Follow the steps mentioned below to install and run the project.
 3. Create `.env` file by copying the `.env.example`. You may use the command to do that `cp .env.example .env`
 4. Update the database name and credentials in `.env` file
 5. Run the command `php artisan migrate:fresh --seed`
-6. Run the command `php artisan serve` to check api functionality
-7. If you get such kind of things 'Personal access client not found or Please create one' then run `php artisan passport:install`
+6. If you get such kind of things 'Personal access client not found or Please create one' then run `php artisan passport:install`
+7. Run the command `php artisan serve` to check api functionality
