@@ -5,21 +5,21 @@ import { Product } from "../../classes/Product"
 import { Link } from "react-router-dom"
 
 const products = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([])
 
   const getUsers = async () => {
-    const response = await axios.get("/products");
-    setProducts(response.data.data);
-  };
+    const response = await axios.get("/products")
+    setProducts(response.data.data)
+  }
 
   const removeProduct = async (id: any) => {
     await axios.delete(`products/${id}`)
-    setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
+    setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id))
 }
 
   useEffect(() => {
-    getUsers();
-  }, []);
+    getUsers()
+  }, [])
 
 
   return (

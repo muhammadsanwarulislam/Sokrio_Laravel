@@ -3,9 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Core\Auth\AuthController;
-use App\Http\Controllers\Core\Role\RoleManagmentController;
-use App\Http\Controllers\Core\Permission\PermissionManagmentController;
+
 use App\Http\Controllers\Core\Product\ProductManagementController;
+use App\Http\Controllers\Core\Purchase\PurchaseManagementController;
+use Psy\Readline\Hoa\Protocol;
 
 // Backend API
 /*
@@ -19,4 +20,6 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::apiResource('products', ProductManagementController::class);
+    Route::apiResource('purchases', PurchaseManagementController::class);
+    Route::get('/ListOfProducts',[PurchaseManagementController::class, 'getAllProducts']);
 });
