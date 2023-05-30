@@ -4,20 +4,29 @@ import Wrapper from "../Wrapper"
 import axios from "axios"
 
 const productEdit = () => {
-  const [id, setId] = useState(useParams().id)
-  const [name, setName] = useState("")
-  const [price, setPrice] = useState("")
-  const [stock, setStock] = useState("")
-  const [unit, setUnit] = useState("")
-  const [product_code, setProductCode] = useState("")
+  const [id, setId]       = useState(useParams().id)
+  const [formData, setFormData] = useState({
+    name: '',
+    price: '',
+    stock: '',
+    unit: '',
+    product_code: ''
+  })
 
   const getProduct = async () => {
-    const response = await axios.get(`/products/${id}`)
-    setName(response.data.data.name)
-    setPrice(response.data.data.price)
-    setStock(response.data.data.stock)
-    setUnit(response.data.data.unit)
-    setProductCode(response.data.data.product_code)
+    try {
+      const response = await axios.get(`/products/${id}`)
+      const item = response.data.data
+      setFormData({
+        name: item.name,
+        price: item.price,
+        stock: item.stock,
+        unit: item.unit,
+        product_code: item.product_code
+      })
+    } catch (error) {
+      console.error('Error fetching item:', error);
+    }
   }
 
   useEffect(() => {
@@ -26,18 +35,21 @@ const productEdit = () => {
 
   const navigate = useNavigate();
 
+  const handleInputChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
 
   const onsubmit = async (event: any) => {
     event.preventDefault();
-
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("price", price);
-    formData.append("stock", stock);
-    formData.append("unit", unit);
-    formData.append("product_code", product_code);
-    await axios.put(`/products/${id}`, formData);
-    navigate("/products");
+    try {
+      await axios.put(`/products/${id}`, formData)
+      navigate("/products")
+    } catch (error) {
+      console.error('Error updating item:', error)
+    }
   };
   return (
     <>
@@ -50,10 +62,8 @@ const productEdit = () => {
                 name="name"
                 placeholder="Name"
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                value={name}
-                onChange={(event) => {
-                  setName(event.target.value);
-                }}
+                value={formData.name}
+                onChange={handleInputChange}
               />
             </div>
 
@@ -63,10 +73,8 @@ const productEdit = () => {
                 name="price"
                 placeholder="Price"
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                value={price}
-                onChange={(event) => {
-                  setPrice(event.target.value);
-                }}
+                value={formData.price}
+                onChange={handleInputChange}
               />
             </div>
             <div className="mt-2">
@@ -75,10 +83,8 @@ const productEdit = () => {
                 name="stock"
                 placeholder="Stock"
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                value={stock}
-                onChange={(event) => {
-                  setStock(event.target.value);
-                }}
+                value={formData.stock}
+                onChange={handleInputChange}
               />
             </div>
             <div className="mt-2">
@@ -87,10 +93,8 @@ const productEdit = () => {
                 name="unit"
                 placeholder="Unit"
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                value={unit}
-                onChange={(event) => {
-                  setUnit(event.target.value);
-                }}
+                value={formData.unit}
+                onChange={handleInputChange}
               />
             </div>
             <div className="mt-2">
@@ -99,10 +103,8 @@ const productEdit = () => {
                 name="product_code"
                 placeholder="Product Code"
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                value={product_code}
-                onChange={(event) => {
-                  setProductCode(event.target.value);
-                }}
+                value={formData.product_code}
+                onChange={handleInputChange}
               />
             </div>
 

@@ -69,13 +69,10 @@ class ProductManagementController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ProductPostRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
-        $product = $this->productRepository->updateByID($id, $request->validated());
-
-        return $this->json('Products update successfully',[
-            'product'          => $product, 
-        ]);
+        $this->productRepository->updateByID($id, $request->all());
+        return $this->json('Products update successfully');
     }
 
     /**
