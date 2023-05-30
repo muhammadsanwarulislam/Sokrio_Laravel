@@ -25,3 +25,10 @@ Follow the steps mentioned below to install and run the project.
 5. Run the command `php artisan migrate:fresh --seed`
 6. If you get such kind of things 'Personal access client not found or Please create one' then run `php artisan passport:install`
 7. Run the command `php artisan serve` to check api functionality
+
+## Q10
+**Login API**
+```
+  http://127.0.0.1:8000/api/login
+```
+To check if the user is authenticated or not and also generate a unique token
