@@ -1,3 +1,11 @@
+# Instructions of the project #
+|           #             |   **Instructions**      |
+|-------------------------|-------------------------|
+| Step-1                  |   [Setup React project](#q1)<br>[Setup Laravel project](#q2)<br>|
+| Step-2                  | [Api explination](#q10)<br>|
+
+
+## Q1
 # Backend APP Or Admin Dashboard(React js) installations
 Follow the steps mentioned below to install and run the project.
 For both **dashboard** **admin**
@@ -5,6 +13,8 @@ For both **dashboard** **admin**
 2. Run the command `npm install`
 3. Run `npm run start` from the project root and visit `http://localhost:3000/` and `http://localhost:3030/`
 
+
+## Q2
 # Backend API(Laravel) installations
 Follow the steps mentioned below to install and run the project.
 
