@@ -36,10 +36,15 @@ class PurchaseManagementController extends Controller
         return $this->json('List of Purchase Products', PurchaseResource::collection($purchase));
     }
 
-    public function currentUserAllProducts()
+    public function currentUserAllProducts(Request $request)
     {
-        $products =$this->userRepository->getCurrentUserAllProducts(Auth::user()->id);
-        return $this->json('List of all Products',new CurrentUserProductResource($products));
+        if($request->input('user_id')) {
+
+            $products = $this->userRepository->getCurrentUserAllProducts($request->input('user_id'));
+        }else {
+            $products = $this->userRepository->getAllProducts();
+        }
+        return $this->json('List of all Products', $products);
     }
     /**
      * Show the form for creating a new resource.
@@ -54,7 +59,11 @@ class PurchaseManagementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $purchase = $this->purchaseRepository->create($request->all());
+
+        return $this->json('Product purchase successfully',[
+            'purchase'          => $purchase,
+        ]);
     }
 
     /**

@@ -14,12 +14,11 @@ use Psy\Readline\Hoa\Protocol;
 */
 Route::post('/register', [AuthController::class,'register']);
 Route::post('/login', [AuthController::class,'login']);
+Route::get('/current_user_all_products',[PurchaseManagementController::class, 'currentUserAllProducts']);
+Route::apiResource('purchases', PurchaseManagementController::class);
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/info', [AuthController::class, 'info']);
     Route::post('/logout', [AuthController::class, 'logout']);
-
     Route::apiResource('products', ProductManagementController::class);
-    Route::apiResource('purchases', PurchaseManagementController::class);
-    Route::get('/current_user_all_products',[PurchaseManagementController::class, 'currentUserAllProducts']);
 });

@@ -3,6 +3,7 @@
 |-------------------------|-------------------------|
 | Step-1                  |   [Setup React project](#q1)<br>[Setup Laravel project](#q2)<br>|
 | Step-2                  | [Api explination](#q10)<br>|
+| Step-3                  | [Configure Thunder for api testing](#q20)<br>|
 
 
 ## Q1
@@ -29,6 +30,37 @@ Follow the steps mentioned below to install and run the project.
 ## Q10
 **Login API**
 ```
-  http://127.0.0.1:8000/api/login
+  http://127.0.0.1:8000/api/login [method=post]
 ```
 To check if the user is authenticated or not and also generate a unique token
+
+**Create Product**
+Only authenticate user can execute the following operations. One more thing after login please place the unique token for the execute the operation
+```
+  http://127.0.0.1:8000/api/products [method=post]
+```
+**Product List**
+```
+  http://127.0.0.1:8000/api/products [method=get]
+```
+**Product Edit**
+```
+  http://127.0.0.1:8000/api/products/{$id} [method=put]
+```
+**Product Delete**
+```
+  http://127.0.0.1:8000/api/products/{$id} [method=delete]
+```
+**List of Supplier**
+```
+  http://127.0.0.1:8000/api/current_user_all_products
+```
+This api provide all of supplier associate with products
+
+**List of products particular supplier**
+```
+  http://127.0.0.1:8000/api/current_user_all_products?user_id={$id}
+```
+Here ```user_id``` will be supplier id
+
+## Q20

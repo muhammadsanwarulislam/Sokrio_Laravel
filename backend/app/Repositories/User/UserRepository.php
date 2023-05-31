@@ -18,6 +18,11 @@ class UserRepository extends BaseRepository
         return $this->model()::with('products')->find($id);
     }
 
+    public function getAllProducts()
+    {
+        return $this->model()::with('products')->get();
+    }
+
     public function findByIDWithRole($id)
     {
         return $this->model()::with('role')->find($id);

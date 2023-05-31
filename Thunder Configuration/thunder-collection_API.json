@@ -1,0 +1,236 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "API",
+    "dateExported": "2023-05-31T05:28:42.785Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "1dece0cf-89a3-4836-b11e-a2b75832bc83",
+            "colId": "091c16d3-f9f8-4dad-8f18-5380040ddacc",
+            "containerId": "",
+            "name": "Login",
+            "url": "{{base_url}}/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-05-30T03:55:31.265Z",
+            "modified": "2023-05-31T03:31:27.201Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "admin@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "password"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "d6cf5301-91db-4335-8a2b-9b895b8908ba",
+            "colId": "091c16d3-f9f8-4dad-8f18-5380040ddacc",
+            "containerId": "",
+            "name": "Product List",
+            "url": "{{base_url}}/products",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-05-30T04:02:14.217Z",
+            "modified": "2023-05-30T04:03:10.944Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDMwMWYwMTdmM2VjZGYyOTA0OTM1OTdlNmNiNjU1NDNiYmI2OWNlNmM2ZTlmMzAyM2IyZDFmMDg2ZThkNmM3NmJlNzU4MjE3NjJkMjU2ZDUiLCJpYXQiOjE2ODUyNjAxMTcuODA5MjA2LCJuYmYiOjE2ODUyNjAxMTcuODA5MjEsImV4cCI6MTcxNjg4MjUxNy42MTkzMzYsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.B-qVQsvIohvSQfd1wYFiHqwMMaPlJU0EUP0JgdMjrwFGOVHNWPssYL1rFleZDGRQBR-WrDshbI1-yKM5UJAMY-ivAWty-Rnvh2pFoMSyae87sew46EhJGXE2IInM9ZDgzr-3vAiXk0DYW6YsxnxJP3ec23Q4Ly16KnqJLaJbVIqIHUetZ_q9KJ-EYaQXexxcjR2PD7kffBE8bBAf3UVclVfQeJ1ymnbmgFEnXOPDLHL5xRxhh1Qi2SOFfK-B2WC0MlMZo6d_Kq6uPb1bnKNclAs8fWCOzTZOuPo5kJ0YuU-lPWlXKZzJIuWMjYskSwXznNZR8MmJAl8CWkcDveN5kc7yLWIRfJ7ZhANkfQ4WhUXFdh8SuQqZHSxcOPQT8_D9jAp-VPtxnb_jx1G9x8FMnKo2LGaeBqtybJyfo-urDfM8II0FDP5OX5J0yU-in3dKsF4UQ2cCa6MYq_JSmz1CETjy26EmvD_mdSMcLYyt2QzZy2odDVjgedzTrR6lixnveXz6qXzuNO6tTm6Pq2WeXaoDHlu91nqDOCzx1YM7GDPgttD3ZARTqdatH0UjO_yvO6VcQV1xEBKczH1vp9RQUSXPcm8pB8NZiCebKaRqtfCcVk4MAyO3poesMuC9fl5vuuwRzeF9KHsA4ZlYO24PpCecwPxOWGjNaYq2iwM1wRw"
+            },
+            "tests": []
+        },
+        {
+            "_id": "04652c4b-8fb3-4bf9-a276-2ae322b9cbb0",
+            "colId": "091c16d3-f9f8-4dad-8f18-5380040ddacc",
+            "containerId": "",
+            "name": "Product create",
+            "url": "{{base_url}}/products",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-05-30T04:03:33.529Z",
+            "modified": "2023-05-31T03:31:59.221Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "product 1"
+                    },
+                    {
+                        "name": "stock",
+                        "value": "10"
+                    },
+                    {
+                        "name": "price",
+                        "value": "230"
+                    },
+                    {
+                        "name": "unit",
+                        "value": "litter"
+                    },
+                    {
+                        "name": "product_code",
+                        "value": "PR-1001"
+                    },
+                    {
+                        "name": "user_id",
+                        "value": "1"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTI0YmQxNWUxOGMwMWJiZGFmYjliMjM1OGQyYmQ2MGZiMDI4YzM2NWIxNmFkNWQ5YWVkOGFiNDkxYzdiZjMzOWU4ZjJmNWViOTdmZjNkMzgiLCJpYXQiOjE2ODU1MDM4ODcuMTY4NywibmJmIjoxNjg1NTAzODg3LjE2ODcwMywiZXhwIjoxNzE3MTI2Mjg3LjE2MjUzMSwic3ViIjoiMiIsInNjb3BlcyI6W119.hrgFGJ_fM38qHQbM6J_4hQns2MSujXfO4K2rTXpjVP58Adpve-Q9JgsHRnqja_eNewg9diuG4DM8bWpyKIFZrX4kgtxq7cbISig4Q-VNjDGpp5fNak7yKa_AXTodvYALiYGzUT6FGHExKdLfMirE2sU9WOFNT4rNLQf79XX4-thblTEZXplI27usutVnZzv_xYqiNOp1Q2niYanI5cuBAD2A_dgqZQT5Gv63icQCygx2Lc9Do5IbWY24M9J8o6i0LQOjK8ctjfzbHo-VQ7d3Kja8LT1tBdIl6QiZ40nUqZOoLjTL4yXnG1DZE_p68iu44zB6jnsaBXkdVkbUW1CCP7pxdJyi0dKjKlVWo24cLNd7HH37_b90R3oOyHSbhlC_s7zU_ZWkYZIgvxbv4Ptv-5v_hO1w_TvOX8raXyQeFs9QNKsU9C9M3d5LAKViePIbeBwYjrqnfEsCnkJy3YcbBpo44HUq6TdWdCej0xN_YsnDe_PjkazzepW9B9xHp2Y7HLZ4eSpx-QXIJ0sxSXnxc6gxKi8Z3BDcJAYUY94pNx-5K0ufpFCtAGL_jhfgiRnT6oqLRfsexaAbBwqpVrR7fUwRrTTSktt93EMrTdiDUz1rV-pGuBLouOTO6KaCDl6k5_WWNd62QtEp4ZvZAfClYiFfxgeCUtAZq2VuqlMl3FY"
+            },
+            "tests": []
+        },
+        {
+            "_id": "91209adf-923e-48c8-bb78-caf529329718",
+            "colId": "091c16d3-f9f8-4dad-8f18-5380040ddacc",
+            "containerId": "",
+            "name": "Product edit",
+            "url": "{{base_url}}/products/2",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-05-30T04:05:55.177Z",
+            "modified": "2023-05-30T04:53:24.068Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"product 3\",\n  \"stock\": 12\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmUxNGVlNzcxYWYyMzJlODcwZTkwMzBjZmUxZmM3MDE3OGJiM2VmZjAzMjZkMjYwNmE2ZTUxMWEwMGViMDRkZTU2MmUwMzllMDI4N2RkYjIiLCJpYXQiOjE2ODU0MTkzMTMuMDM1MTkzLCJuYmYiOjE2ODU0MTkzMTMuMDM1MTk1LCJleHAiOjE3MTcwNDE3MTMuMDMxNjcyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.blsExqeVLmW46h37oZt-uYpWXKeVCkiLPIaZZ4t4LgqAJ9xhX3fPqKQwUXolNKu3tK5C5khoVybvv2MmUmfu_FehMR-CrZRGbgYZ1g67cPCfIlzPZshbqRc8Q-KBWaUAQGMAnkApyvGq59BoKEcj6-ggRr-0mJChVhNd32kQIHBC8ZevSsfERVdyzoEXD8sGCJswKjD_6gHqSYiEv3tfPTPF6XqY15ZYokbrcB7Rh9XwdZ5202fd1BFJqme8QsRZLT4tnJj8K5YR-W91gDH4ZUWgsPgN4XA2CGksm_6H32os-uSYOCfjjKNv7qRrjFa9JtzXfHR6ufdCCCJN8Hp0eKkQEiO-GJHYlOUECQF17IGTm1qz1XXASmm2ksQaQ-o_Lj_cCV51HfCVmAWQSW12nZ_Wo7A0R2KWCezS14kzESEEVj6j8CLdKe5sxKKMM0IY_dk4XkiYL3wKnrtbwHUeiVNai--8s_Cg47Ikd26nGjsERdiK2TpYXA0KwS0K8CK1Vlqc3_7tI_yz11mIdQyiu1iqww6kXGCwg9L8EFLa3eDgfTzb2c6NXFHoqQGduE5lrvRrI0XGMjrHx9-S85BVa0GuWG1RzNoXfPfzuizYR4IIkTjNb6Is3YaepQD4wrMbcEIZHdiFHKoQBMOXSeD3t4ChbwwNHSNSDbOsqfBBtbM"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b9894d77-68bf-4e6c-875d-9224de80e483",
+            "colId": "091c16d3-f9f8-4dad-8f18-5380040ddacc",
+            "containerId": "",
+            "name": "Purchase List",
+            "url": "{{base_url}}/purchases",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-05-30T10:16:33.315Z",
+            "modified": "2023-05-30T10:17:51.591Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzg4ZDRhMWVhMDE3YzQ5MzY5MmZjMTkwYWMzZDJjNWZhMzY0NWUwMjljZWM1OWY2ZTUxNzAyMjExZjdlYWVhMTgyNzIzZTA0YjY2MWZmNTYiLCJpYXQiOjE2ODU0NDE4MjEuMjk3Njc0LCJuYmYiOjE2ODU0NDE4MjEuMjk3Njc3LCJleHAiOjE3MTcwNjQyMjEuMjkxMDYsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.E3gWet5qGDJYUaUQCN-2xcclxQ7n9mS0rkcFFE6gAILv3C1l2f_viBr-s-DCQ-1ohNWoHHN9tlLDeZVWU0Sw0xrmnGAfgVDHomjm7P0VWmdVongLkZBsxWLHxP0YKjAFCHx1DBZpSZzw1ttduZps0egGlqk3a3FztFOOoIwjaq5rcytJiAauTvj8KJAG6nJpw2ok7DJ2Nj5BmfQoLFM6oI2WarI5fpoX1-gCoUw4wXrm2HygJiUc4bZoAudu2zeE6k0WqS6bwsEuSuKSLW86zLhcJJyT5R6fMGJ6dymi5PQ4n92iRsxmU55-avlDb9uOc_n5te8CEqjqz8pyPbzbdatNdq5G3Qdi0TCQGfmx9PnqBSkA3tFYXlswLkg-PhHrBIDr4XMb4guOP1grKfdROuT0qMi9z9HRKuznAjwX6uxrfeMD5zPWX-iTa1aCpIOw_5efG2mgCOAl8i1msg555SxFwqfMMqe4tSXgGib3UQubxbLWWVO8Ql5y9so4p-uWzlJGcp_sbs5g_QgmY9_3MXbdZF1Q-aKQE03KihRLYkFyzndXrLqLVAvmALriNFgGDkmk6zfEN6d2Joshtp5rITpRDSw0a_DxkvuABV3qMXNFLXMqU9AoNRU5KOmCxxy7Mhrb4pW0ACGzFCZ0cFsaKkcBor1Ir8Joi7lSMC8o-f8"
+            },
+            "tests": []
+        },
+        {
+            "_id": "60c81efd-0fa5-43c0-97bd-b1f3b2c7faf4",
+            "colId": "091c16d3-f9f8-4dad-8f18-5380040ddacc",
+            "containerId": "",
+            "name": "List of products associate user",
+            "url": "{{base_url}}/current_user_all_products?user_id=2",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-05-30T10:22:43.913Z",
+            "modified": "2023-05-31T03:58:47.590Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [
+                {
+                    "name": "user_id",
+                    "value": "2",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "f4623b6c-e243-4b2e-a0d2-a9435859e0be",
+            "colId": "091c16d3-f9f8-4dad-8f18-5380040ddacc",
+            "containerId": "",
+            "name": "Purchase",
+            "url": "{{base_url}}/purchases",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-05-31T04:01:34.485Z",
+            "modified": "2023-05-31T04:38:37.252Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"product_id\":3,\n  \"invoice_no\":101010,\n  \"note\":\"hi\",\n  \"total_price\":120,\n  \"date\":\"2023-05-28 08:12:20\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
