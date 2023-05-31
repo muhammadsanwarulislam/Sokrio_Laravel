@@ -69,7 +69,7 @@ Here ```user_id``` will be supplier id
 ```
 
 ## Q20
-First install Thunder client to vscode
+First install Thunder client extension to vscode
 
 ![](https://github.com/muhammadsanwarulislam/Sokrio_Laravel/blob/main/Thunder%20Configuration/1.png)
 
