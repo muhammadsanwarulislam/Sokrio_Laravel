@@ -59,13 +59,13 @@ This api provide all of supplier associate with products
 
 **List of products particular supplier**
 ```
-  http://127.0.0.1:8000/api/current_user_all_products?user_id={$id}
+  http://127.0.0.1:8000/api/current_user_all_products?user_id={$id} [method=get]
 ```
 Here ```user_id``` will be supplier id
 
 **Purchase product**
 ```
-  http://127.0.0.1:8000/api/purchases
+  http://127.0.0.1:8000/api/purchases [method=post]
 ```
 
 ## Q20
