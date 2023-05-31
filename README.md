@@ -63,4 +63,22 @@ This api provide all of supplier associate with products
 ```
 Here ```user_id``` will be supplier id
 
+**Purchase product**
+```
+  http://127.0.0.1:8000/api/purchases
+```
+
 ## Q20
+First install Thunder client
+
+![](https://github.com/muhammadsanwarulislam/Sokrio_Laravel/blob/main/Thunder%20Configuration/1.png)
+
+Import ```thunder-collection_API.json```
+
+![](https://github.com/muhammadsanwarulislam/Sokrio_Laravel/blob/main/Thunder%20Configuration/2.png)
+
+Create ```env```
+
+![](https://github.com/muhammadsanwarulislam/Sokrio_Laravel/blob/main/Thunder%20Configuration/3.png)
+
+![](https://github.com/muhammadsanwarulislam/Sokrio_Laravel/blob/main/Thunder%20Configuration/4.png)
